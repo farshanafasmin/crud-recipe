@@ -1,0 +1,31 @@
+
+
+.add{
+    box-shadow: 3px 3px 5px 4px grey;
+}
+
+.btn{
+    background-color: rgb(24, 51, 24);
+    color: white;
+}
+
+h1{
+   color: #8A9A5B; 
+   text-shadow:1px 1px black;
+}
+
+@keyframes colorChange {
+    0% {
+      color: #8A9A5B;
+    }
+    50% {
+      color: rgb(24, 51, 24);
+    }
+    100% {
+      color: green;
+    }
+  }
+
+  h1 {
+    animation: colorChange 3s infinite alternate;
+  }

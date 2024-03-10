@@ -1,0 +1,32 @@
+
+<!-- ------------------------------------------- -->
+<div class="row m-5">
+   
+    <form class="mt-5 d-flex" role="search">
+        <input  [(ngModel)]="recipeName" name="productName" class="form-control me-2" type="search" placeholder="Search by recipe name" aria-label="Search">
+       
+        <div class="dropdown d-flex   justify-content-center  ">
+            <a (click)="logout()" routerLink="add-user"> <button class="btn btn-secondary " type="button" id="dropdownMenuButton1"
+               aria-expanded="false">
+                Logout
+            </button></a>
+           
+        </div>
+    </form>
+    <h1 class="text-center mt-2">All Recipes</h1>
+    <div class="card p-3 mt-5 me-3 ms-2 mb-5"   *ngFor="let i of recipeList | search: recipeName: 'name'">
+
+        <h5 class="card-title text-center fw-bold"><i>{{ i.name }}</i></h5>
+
+      <a routerLink="/recipes/view-recipe/single/{{i.id}}" >  <img [src]="i.image" class="img-fluid card-img-top" alt="..."></a>
+      <button (click)="toggleLike(i.id)" class="btn">
+        <i class="fa-solid fa-heart fs-5" [ngClass]="{ 'icon-liked': likeStatus[i.id], 'icon-unliked': !likeStatus[i.id] }"></i>
+        {{ likeStatus[i.id] ? '' : '' }}
+    </button>
+      
+    </div>
+    
+
+
+</div>
+

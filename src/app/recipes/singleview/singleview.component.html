@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row" *ngFor="let i of singleRecipe | search: recipeName: 'name'" >
+       <div class="col-lg-6">
+        <img [src]="i.image" class="img-fluid  mt-5 " alt="...">
+       </div>
+        <div class="col-lg-6 mt-5">
+    
+            <div  class="card m-5" >
+               
+                 
+                  
+                    <div class="card-body">
+                      <h5 class="card-title">{{ i.name }}</h5>
+                      <h5 class="card-title">Ingredients</h5>
+                      <ol>
+                          <li *ngFor="let ingredient of i.ingredients.split(',')">{{ ingredient }}</li>
+                      </ol>
+                      <h5>Instructions</h5>
+                      <ol>
+                          <li *ngFor="let preparation of i.preparation.split(',')">{{ preparation }}</li>
+                      </ol>                </div>
+                  
+              
+              </div>
+        </div>
+    </div>
+    
+    
+</div>

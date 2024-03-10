@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="menu col-2 align-items-center justify-content-center">
+        <a routerLink='add-recipe'><button class="btn  mt-5 mb-3 fs-5"><i class="fa-solid fa-bowl-food"></i><span
+                    class="ms-2">Add Recipe</span></button></a>
+        <a routerLink="add-user"><button class="btn  mt-2 mb-3 fs-5"><i class="fa-solid fa-user-plus"></i><span
+                    class="ms-2">Add User</span></button></a>
+        <a (click)="logout()" routerLink="add-user"><button class="btn mt-2 mb-3 fs-5"><i
+                    class="fa-solid fa-right-from-bracket fa-rotate-180"></i><span
+                    class="ms-2">Logout</span></button></a>
+    </div>
+
+    <div class="col-10 justify-content-center align-items-center">
+       <div class="text-center">
+            <form class="mt-5 d-flex justify-content-center" role="search">
+                <input [(ngModel)]="recipeName" name="search" class="form-control me-2" type="search"
+                    placeholder="Search by name" aria-label="Search">
+            </form>
+       </div>
+
+        <div data-aos="zoom-in-down" *ngFor="let i of recipeList | search: recipeName: 'name'"
+            class="card mt-5 ms-5 me-5 mb-5 w-50 justify-content-center">
+            
+
+                <img [src]="i.image" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center fs-5 fw-bold">{{ i.name }}</h5>
+                    <h5 class="card-title">Ingredients</h5>
+                    <ol>
+                        <li *ngFor="let ingredient of i.ingredients">{{ ingredient }}</li>
+                    </ol>
+                    <h5>Instructions</h5>
+                    <ol>
+                        <li *ngFor="let preparation of i.preparation">{{ preparation }}</li>
+                    </ol>
+
+                    <div class="d-flex justify-content-between align-items-center">
+                        <a routerLink="edit-recipe/{{ i.id }}"><i class="fa-solid fa-pen-to-square fs-5" style="color: red"></i></a>
+                        <i (click)="removeRecipe(i.id)" class="fa-solid fa-trash-can fs-5" style="color: red"></i>
+                    </div>
+            
+        </div>
+    </div>
+</div>

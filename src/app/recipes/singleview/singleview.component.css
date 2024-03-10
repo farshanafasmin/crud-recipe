@@ -1,0 +1,32 @@
+.view{
+    box-shadow: 2px 2px gray;
+}
+
+.menu{
+    background-image: url('https://i.postimg.cc/hPbMyJBX/menu.avif');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.btn{
+    background-color:rgb(18, 83, 83);
+    color: white;
+}
+.card-header{
+    background-color: rgb(18, 83, 83);
+    color: white;
+
+}
+
+img{
+    border-radius: 10px;
+}

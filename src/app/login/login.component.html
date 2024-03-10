@@ -1,0 +1,33 @@
+<div class="container-fluid bg-image">
+    <div class="row">
+        <div class="col-lg-3"></div>
+
+        <div class="login col-lg-6 mt-5 mb-5 text-center">
+            <h1 class="text-center mt-3">Hello <br> <span class="fs-3"> Sign in to your account</span></h1>
+            <form  [formGroup]="loginFormModel">
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label fw-bold mt-5">Email address</label>
+                    <input formControlName="email" name="email" type="email" class="form-control"
+                        id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div *ngIf="loginFormModel.get('email')?.errors && loginFormModel.get('email')?.touched">
+                        <p class="text-danger">Please enter a valid email</p>
+                    </div>
+                    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label  fw-bold">Password</label>
+                    <input formControlName="pswd" type="password" class="form-control" id="Password" name="password">
+                </div>
+
+                <div *ngIf="loginFormModel.get('pswd')?.errors && loginFormModel.get('pswd')?.touched">
+                    <p class="text-danger">Include charecters,numbers and space only</p>
+                </div>
+                <button (click)="login()" type="submit" class="btn  w-25 mt-5 mb-5">Admin Login</button>
+                <button (click)="loginUser()" type="submit" class="btn w-25 mt-5 mb-5 ms-5 ">User Login</button>
+
+            </form>
+        </div>
+
+        <div class="col-lg-3 "></div>
+    </div>
+</div>

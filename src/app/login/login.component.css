@@ -1,0 +1,47 @@
+
+.container-fluid{
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-image: url('https://i.postimg.cc/MZh6d7fw/pexels-roman-odintsov-4551832-1.jpg');
+
+  }
+
+
+
+.login {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: rgba(1, 1, 1, 0.8); 
+    padding: 20px;
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.btn {
+    background-color: rgb(24, 51, 24);
+    color: white;
+    border-radius: 5px; 
+}
+
+.btn:hover {
+    background-color: rgba(108, 114, 108, 0.8);
+}
+
+h1{
+    color: wheat;
+}
+
+label{
+    color: white;
+}

@@ -1,0 +1,47 @@
+<div class="row">
+    
+    <div class="col-3">
+
+    </div>
+
+    <div class="add col-6 text-center mt-5 mb-5">
+        <form  (ngSubmit)="addRecipe()" [formGroup]="recipeModel">
+            <h1 class="text-center">Add Recipe</h1>
+            <div class="mb-3">
+                <label for="name" class="form-label fw-bold mt-5">Name</label>
+                <input formControlName="name" type="text" class="form-control" id="name" name="name">
+            </div>
+            <div *ngIf="recipeModel.get('name')?.errors && recipeModel.get('name')?.touched">
+                <p class="text-danger">Include letters and whitespaces only</p>
+              </div>
+            <div class="mb-3">
+                <label for="Ingredients" class="form-label  fw-bold">Ingredients</label>
+                <textarea  formControlName="ingredients" name="ingredients" type="textarea" class="form-control" id="Ingredients"></textarea>
+            </div>
+            <div *ngIf="recipeModel.get('ingredients')?.errors && recipeModel.get('ingredients')?.touched" >
+                <p class="text-danger">Please enter input</p>
+              </div>
+            <div class="mb-3">
+                <label for="prep" class="form-label  fw-bold">Preperation</label>
+                <textarea  formControlName="preparation" name="preparation"  type="textarea" class="form-control" id="prep"></textarea>
+            </div>
+            <div *ngIf="recipeModel.get('preparation')?.errors && recipeModel.get('preparation')?.touched" >
+                <p class="text-danger">Please enter input</p>
+              </div>
+
+              <div class="mb-3">
+
+                <input (change)="getImage($event)" type="file" formControlName="image" placeholder="image" name="image" class="form-control" id="image">
+                <img [src]="image" alt="no image" class="mt-5 shadow w-25">
+
+              </div>
+            
+            <button type="submit" class="add btn  w-50 mt-5 mb-5">Add</button>
+        </form>
+    </div>
+
+    <div class="col-3"></div>
+</div>
+
+          
+ 

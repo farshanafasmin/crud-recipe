@@ -1,0 +1,32 @@
+<div class="row">
+    
+    <div class="col-3">
+
+    </div>
+
+    <div  *ngIf="!editClicked" class="edit col-6 text-center mt-5 mb-5">
+        <form (ngSubmit)="updateRecipe()">
+            <h1 class="text-center">EditRecipe</h1>
+            <label for="p1">
+                <input (change)="getFile($event)" type="file" style="display: none;" id='p1'>
+                <img class="rounded mt-3" [src]="recipeImage" alt="no image" width="150" height="150">
+            </label>
+            <div class="mb-3">
+                <label for="name" class="form-label fw-bold mt-5">Name</label>
+                <input [(ngModel)]="recipeData.name" name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="Ingredients" class="form-label  fw-bold">Ingredients</label>
+                <textarea [(ngModel)]="recipeData.ingredients" name="ingredient" type="textarea" class="form-control" id="Ingredients"></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="prep" class="form-label  fw-bold">Preperation</label>
+                <textarea [(ngModel)]="recipeData.preparation" name="preparation" type="textarea" class="form-control" id="prep"></textarea>
+            </div>
+            
+            <button type="submit" class="add btn  w-50 mt-5 mb-5">Update</button>
+        </form>
+    </div>
+
+    <div class="col-3"></div>
+</div>

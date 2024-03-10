@@ -1,0 +1,12 @@
+nav{
+    background-color: #d4b8c7 ;
+}
+a{
+    color: black;
+    font-weight: bolder;
+    /* font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+}
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}

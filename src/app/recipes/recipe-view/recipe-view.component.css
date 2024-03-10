@@ -1,0 +1,42 @@
+.view{
+    box-shadow: 2px 2px gray;
+}
+
+.menu{
+    background-image: url('https://i.postimg.cc/hPbMyJBX/menu.avif');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-color: rgba(166, 85, 85, 0.1);
+    
+
+
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.btn2{
+    background-color:rgb(18, 83, 83);
+    color: white;
+}
+
+.icon-liked {
+    color: red; /* Change the color to your desired color for liked state */
+}
+
+.icon-unliked {
+    color: black; /* Change the color to your desired color for unliked state */
+}
+
+.card{
+    width: 300px;
+}
+
+img{
+    width: 300px;
+    height: 300px;
+}

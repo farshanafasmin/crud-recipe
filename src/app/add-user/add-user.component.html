@@ -1,0 +1,39 @@
+<div class="row">
+    
+    <div class="col-3">
+
+    </div>
+
+    <div class="add col-6 text-center mt-5 mb-5">
+        <form (ngSubmit)="addUser()" [formGroup]="userModel">
+            <h1 class="text-center">Add User</h1>
+            <div class="mb-3">
+                <label for="name" class="form-label fw-bold mt-5">Name</label>
+                <input formControlName="name" type="text" class="form-control" id="name" name="name">
+            </div>
+            <div *ngIf="userModel.get('name')?.errors && userModel.get('name')?.touched">
+                <p class="text-danger">Include letters and whitespaces only</p>
+              </div>
+            <div class="mb-3">
+                <label for="email" class="form-label fw-bold mt-5">Email</label>
+                <input formControlName="email" type="email" class="form-control" id="email" name="email">     
+           </div>
+           <div *ngIf="userModel.get('email')?.errors && userModel.get('email')?.touched" >
+            <p class="text-danger">Please enter a valid email</p>
+          </div>
+            <div class="mb-3">
+                <label for="mobile" class="form-label fw-bold mt-5">Mobile</label>
+                <input formControlName="mobile" type="text" class="form-control" id="mobile" name="mobile">                 </div>
+                <div *ngIf="userModel.get('mobile')?.errors && userModel.get('mobile')?.touched">
+                    <p class="text-danger">Please enter a valid mobile number</p>
+                  </div>
+            
+            <button type="submit" class="add btn  w-50 mt-5 mb-5">Add</button>
+        </form>
+    </div>
+
+    <div class="col-3"></div>
+</div>
+
+          
+ 
