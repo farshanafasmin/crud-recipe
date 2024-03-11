@@ -7,7 +7,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ServiceService {
-  base_url='http://localhost:8000'
+  base_url='https://recipe-server-tc12.onrender.com'
 
   constructor(private http:HttpClient) { }
 

@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class RecipeserviceService {
 
-  base_url='http://localhost:8000'
+  base_url='https://recipe-server-tc12.onrender.com'
 
   constructor(private http:HttpClient) { }
 
